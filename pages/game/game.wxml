@@ -12,7 +12,9 @@
 
 <view class='mid'>
   <view class='circle'>
-
+    <view class='circle_lit'>
+      <text>第1题</text>
+    </view>
   </view>
   <view class='music'>
 
@@ -20,7 +22,7 @@
 </view>
 
 <view class='chengyu'>
-
+    天下食__
 </view>
 
 <view class='share'>
