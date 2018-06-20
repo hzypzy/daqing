@@ -1,7 +1,9 @@
 {
   "pages":[
+    "pages/friend_pk/frd_pk",
+    "pages/index/index",
     "pages/game/game",
-    "pages/index/index"
+    "pages/rank/rank"
   ],
   "window":{
     "backgroundTextStyle":"light",
