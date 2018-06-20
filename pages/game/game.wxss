@@ -76,7 +76,9 @@ page{
   align-items: center;
   line-height: 118rpx;
   color: black;
+
   font-size: 125rpx;
+
   letter-spacing: 5rpx;
 }
 .share{
@@ -97,10 +99,32 @@ page{
 }
 .z{
   width: 100%;
-  height: 350rpx;
-  background: red;
+  height: 380rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center
 }
 .z_1, .z_2{
-  width: 100rpx;
-  height: 100rpx;
+  width: 300rpx;
+  height: 300rpx;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAP4AAAD/CAMAAADmFJvGAAAAkFBMVEVNhOhNhOhNhOgAAABNhOhql+xNhOhNhOhNhOhNhOhNhOhNhOj9/v/r8v36/P+80feUtfFQhulNhOhOhej5+/9NhOjU4fr9/v/x9f3///9NhOjN3fnY5PpNhOiaufLw9P1NhOj////8/f/8/f9Wi+lNhOhNhOjp8PxNhOj////////u8/3///+ow/Sow/T///8NY5nDAAAAL3RSTlMzmcwAEwQxKoghB1b6+enl28OoolgjCP723VXu3MrGvLqmjIt4dWloZ1Lz8Ne0siyUUYYAAAIsSURBVHja7NY7asNQAAXRB/7hYFQJgSpjuzAOgdn/7vJRSJMlzJwdDNzijt2PZb6tFyTeP27zsnVv+a8VmfX1l394IPQ4/ObfUbpv+TNS83f+MiE1LV/5T7Seu3G4onV9G3vt9mHaj7Pm7fx3OY8TYqdxROw4BmKjfLHyESsfsfIRKx+x8hErH7HyESsfsfIRKx+x8hErH7HyESsfsfIRKx+x8hErH7HyESsfsfIRKx+x8hErH7HyESsfsfIRKx+x8hErH7HyESsfsfIRKx+x8hErH7HyESsfsfIRKx+x8hErH7HyESsfsfIRKx+x8hErH7HyESsfsfIRKx+x8hErH7HyESsfsfIRKx+x8hErH7HyESsfsfIRKx+x8hErH7HyESsfsfIRKx+x8hErH7HyESsfsfIRKx+x8hErH7HyESsfsfIRKx+x8hErH7HyESsfsfIRKx+x8hErH7HyESsfsfIRKx+x8hErH7HyESsfsfIRKx+x8hErH7HyESsfsfIRKx+x8hErH7HyESsfsfIRKx+xz3boNIVBGAig8LSTPQ1mIShu+ENFKO3c/3aleozxu8F7dz4xdue/iK0WAN7EVgegRmJrVKC/xNZHg107YqpbLQg/E1OzFyDBNMRSY8ABir6w7G+KFwgo65FjIGZCzEeVCIhO7yXFIbTERBuGmMquHf7z0dXe5CVNTyamtGTTV4dXPkqh/GYebJjNKyHxyr8GWK2ACaWtkHj6AUqjhPM2AbL5AAAAAElFTkSuQmCC)no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 125rpx;
+  color: rgba(55, 75, 116, 1)
+}
+.xv_1, .xv_2{
+  width: 150rpx;
+  height: 150rpx;
+  position: absolute;
+}
+.xv_1{
+  left: 116rpx;
+  bottom: 176rpx;
+}
+.xv_2{
+  right: 116rpx;
+  bottom: 176rpx;
 }
