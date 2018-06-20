@@ -19,20 +19,22 @@
     <view class='content'>
       <view class='first'>
         <view class="userinfo">
-          <block>
+          <view class='user_'>
             <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
             <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-          </block>
+          </view>
+          <!-- <image class='gold' src='../../img/gold.png'></image> -->
+          <text class='money'>125250</text>
         </view>
         
         <view class='g_k'>
           <text class='number_gk'>{{number_gk}}</text>
-          <text>已挑战（关）</text>
+          <text class='ytz'>已挑战(关)</text>
         </view>
 
         <view class='lv'>
-            <image src='{{lv_url}}'></image> 
-            <text class='lv_'></text>
+            <image class='lv_photo' src='{{lv_url}}'></image>
+            <text class='lv_text'>等级一</text>
         </view> 
       </view>
         <view class='second'>
