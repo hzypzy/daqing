@@ -1,6 +1,40 @@
-<!--logs.wxml-->
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
+<!--game.wxml-->
+<view class='top'>
+  <view class='top_border'>
+    <view class='tm'>
+      <text>共10题</text>
+    </view>
+    <view class='money'>
+      <text>0,000,000</text>
+    </view>
+  </view>
+</view>
+
+<view class='mid'>
+  <view class='circle'>
+
+  </view>
+  <view class='music'>
+
+  </view>
+</view>
+
+<view class='chengyu'>
+
+</view>
+
+<view class='share'>
+  <view class='share_frd'>
+
+  </view>
+  <view class='share_tem'>
+  
+  </view>
+</view>
+
+<view class='z'>
+  <view class='z_1'>
+  </view>
+  <view class='z_2'>
+  </view>
 </view>
