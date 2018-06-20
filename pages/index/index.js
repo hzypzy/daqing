@@ -16,6 +16,24 @@ Page({
       url: '../logs/logs'
     })
   },
+  new_rank: function () {
+    wx.navigateTo({
+      url: '../rank/rank'
+    })
+  },
+  friend_pk_rank:function(){
+    wx.navigateTo({
+      url: '../friend_pk/frd_pk'
+    })
+  },
+  game_start:function(){
+    wx.redirectTo({
+      url: '../game/game',
+    })
+  },
+  // focus_:function(){
+  //   this.set
+  // }
   onLoad: function () {
     if (app.globalData.userInfo) {
       // console.log(button.open - type.getUserInfo)

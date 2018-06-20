@@ -5,13 +5,13 @@
     <!-- <image class='bg_size' src='../../img/bg.png'></image>   -->
    <!-- 头部好友PK logo 关注好礼 -->
     <view class='top'>
-      <view class='pk'>
+      <view class='pk' catchtap='friend_pk_rank'>
          <image class='img_pk' src='../../img/pkb_logo.png'></image> 
       </view>
       <view class='logo'>
          <image class='img_logo' src='../../img/hz_logo.png'></image> 
       </view>
-      <view class='focus'>
+      <view class='focus' catchtap='focus_'>
          <image class='img_focus' src='../../img/focusMe.png'></image> 
       </view>
     </view>
@@ -37,12 +37,11 @@
             <text class='lv_text'>等级一</text>
         </view> 
       </view>
-        <view class='second'>
-        <image></image>
+        <view class='second' catchtap='game_start'>
        </view> 
 
       <view class='thired'>
-        <view class='rank'>
+        <view class='rank' catchtap='new_rank'>
         </view>
         <view class='recommend'>
         </view>
@@ -68,4 +67,7 @@
     <!-- <view class="usermotto">
       <text class="user-motto">{{motto}}</text>
     </view> -->
+  <view class='nalibao'>
+    
+  </view>
   </view>
