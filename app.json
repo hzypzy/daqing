@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#2381E5",
+    "navigationBarTitleText": "超级猜汉字",
+    "navigationBarTextStyle":"white",
+    "navigationBarTitleStyle": "left"
+  }
+}

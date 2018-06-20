@@ -1,0 +1,69 @@
+<!--index.wxml-->
+
+  <view class="container zero">
+   <!-- 背景图片 -->
+    <!-- <image class='bg_size' src='../../img/bg.png'></image>   -->
+   <!-- 头部好友PK logo 关注好礼 -->
+    <view class='top'>
+      <view class='pk'>
+         <image class='img_pk' src='../../img/pkb_logo.png'></image> 
+      </view>
+      <view class='logo'>
+         <image class='img_logo' src='../../img/hz_logo.png'></image> 
+      </view>
+      <view class='focus'>
+         <image class='img_focus' src='../../img/focusMe.png'></image> 
+      </view>
+    </view>
+    <!-- 主要部分 -->
+    <view class='content'>
+      <view class='first'>
+        <view class="userinfo">
+          <block>
+            <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+          </block>
+        </view>
+        
+        <view class='g_k'>
+          <text class='number_gk'>{{number_gk}}</text>
+          <text>已挑战（关）</text>
+        </view>
+
+        <view class='lv'>
+            <image src='{{lv_url}}'></image> 
+            <text class='lv_'></text>
+        </view> 
+      </view>
+        <view class='second'>
+        <image></image>
+       </view> 
+
+      <view class='thired'>
+        <view class='rank'>
+        </view>
+        <view class='recommend'>
+        </view>
+      </view>  
+       
+    </view>
+     <!-- <view class='first'> -->
+      <!-- <view class="userinfo">
+          <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+          <block wx:else>
+            <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+          </block>
+      </view>
+    <!-- </view>  -->
+    
+    <!-- <view class='second'>
+      <image></image>
+    </view> -->
+
+    
+    
+    <!-- <view class="usermotto">
+      <text class="user-motto">{{motto}}</text>
+    </view> -->
+  </view>
