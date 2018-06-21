@@ -11,7 +11,7 @@
       <view class='logo'>
          <image class='img_logo' src='../../img/hz_logo.png'></image> 
       </view>
-      <view class='focus' catchtap='gift_show'>
+      <view class='focus' catchtap='focus_'>
          <image class='img_focus' src='../../img/focusMe.png'></image> 
       </view>
     </view>
@@ -72,11 +72,3 @@
   <!-- <view class='nalibao'>
     
   </view> -->
-  <view class='model-gift' hidden='{{!showGift}}' catchtap='gift_hide'>
-    <view class='model-gift-box'>
-      <image class='golds-image' src='/img/golds.png'></image>
-      <view class='hint-box'>1</view>
-      <view class='hint-box'>2</view>
-      <button class='get-gift-btn' open-type='contact'>去客服拿礼包</button>
-    </view>
-  </view>

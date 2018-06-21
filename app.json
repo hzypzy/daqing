@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/index/focusForGift/focusForGift",
     "pages/game/game",
     "pages/friend_pk/frd_pk",
     "pages/rank/rank"

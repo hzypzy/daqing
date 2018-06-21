@@ -11,3 +11,42 @@
 text{
   color: white
 }
+.model-gift{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background:rgba(0, 0, 0, 0.8);
+}
+.model-gift-box{
+  width: 560rpx;
+  height: 650rpx;
+  margin: 200rpx auto 0;
+  background-color: #fff;
+  padding-top:40rpx;
+}
+.golds-image{
+  width: 292rpx;
+  height: 197rpx;
+  display: block;
+  margin: 0 auto;
+}
+.hint-box{
+  width: 480rpx;
+  font-size: 30rpx;
+  text-align: center;
+  background-color: #999;
+  line-height: 50rpx;
+  margin:30rpx auto 0;
+}
+.get-gift-btn{
+  width: 480rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-radius: 45rpx;
+  text-align: center;
+  color: #fff;
+  background:linear-gradient(to right,red, blue);
+}
