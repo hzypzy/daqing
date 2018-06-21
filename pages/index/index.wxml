@@ -24,7 +24,7 @@
             <text class="userinfo-nickname">{{userInfo.nickName}}</text>
           </view>
           <!-- <image class='gold' src='../../img/gold.png'></image> -->
-          <text class='money'>125250</text>
+          <text class='money'>{{money_num}}</text>
           <view class='jinbi'></view>
         </view>
         
@@ -35,7 +35,7 @@
 
         <view class='lv'>
             <image class='lv_photo' src='{{lv_url}}'></image>
-            <text class='lv_text'>等级一</text>
+            <text class='lv_text'>等级{{lv_num}}</text>
         </view> 
       </view>
         <view class='second' catchtap='game_start'>
