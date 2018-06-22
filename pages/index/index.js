@@ -16,10 +16,15 @@ Page({
     userInfo: {},
     // 遮罩层唤醒
     showGift: false,
+    // 开始挑战触摸事件信号量
+    ishover:false,
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
+  aa:function(e){
+    console.log(e)
+  },
   gift_live:function(){
     this.setData({
       showGift: !showGift
@@ -37,7 +42,10 @@ Page({
   },
   game_start:function(){
     wx.navigateTo({
-      url: '../game/game',
+      url: '../game/game'
+    })
+    this.setData({
+      ishover: false
     })
   },
   bindViewTap: function () {
@@ -53,6 +61,11 @@ Page({
   gift_hide: function () {
     this.setData({
       showGift: false
+    })
+  },
+  hover:function(){
+    this.setData({
+      ishover:true
     })
   },
   onLoad: function () {

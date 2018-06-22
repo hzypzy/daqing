@@ -38,8 +38,8 @@
             <text class='lv_text'>等级{{lv_num}}</text>
         </view> 
       </view>
-        <view class='second' catchtap='game_start'>
-       </view> 
+          <!-- <view class='{{ishover?"seconds":"second"}}' catchtouchend='game_start' catchtouchstart='hover'></view>   -->
+          <view class="second" catchtap='game_start'></view>  
 
       <view class='thired'>
         <view class='rank' catchtap='new_rank'>
