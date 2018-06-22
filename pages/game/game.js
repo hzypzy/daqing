@@ -7,7 +7,7 @@ Page({
     key:{},
     logs: [],
     // 玩家财产
-    property:'0',
+    property:'',
     // 第几题
     ji:'1',
     // 判断对错信号量
@@ -25,6 +25,7 @@ Page({
     var key=wx.getStorageSync('key')
     //获取来自首页缓存的玩家金币数量
     var p = key.money_num
+    console.log(p)
     this.setData({ 
       property:p,
       key:key

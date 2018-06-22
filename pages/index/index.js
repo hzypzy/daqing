@@ -5,7 +5,7 @@ const app = getApp()
 Page({
   data: {
     // 金币数
-    money_num:'',
+    money_num:'0',
     // 等级徽章图
     lv_url:'',
     // 等级数字
@@ -69,18 +69,28 @@ Page({
     })
   },
   onLoad: function () {
-
-    // 设置缓存
-    wx.setStorageSync('key', {
-      // 金币数
-      money_num: '10',
-      // 等级徽章图
-      lv_url: '',
-      // 等级数字
-      lv_num: '',
-      // 已经挑战的关卡数
-      number_gk: ''
-    })
+    var key=wx.getStorageSync('key');
+    if (key) {
+      this.setData({
+        money_num: key.money_num,
+        lv_url: key.lv_url,
+        number_gk: key.number_gk
+      })
+      
+      // 设置缓存
+      wx.setStorageSync('key', {
+        // 金币数
+        money_num: key.money_num,
+        // 等级徽章图
+        lv_url: key.lv_url,
+        // 等级数字
+        lv_num: key.lv_num,
+        // 已经挑战的关卡数
+        number_gk: key.number_gk
+      })
+    }else{
+      key={}
+    }
 
       if (app.globalData.userInfo) {
       // console.log(button.open - type.getUserInfo)
@@ -116,7 +126,7 @@ Page({
   onShow: function () {
     this.setData({
       // 设置金币数量到data
-      money_num:'888888',
+      // money_num:'888888',
       // 设置已挑战关卡数目到data
       number_gk: '0',
       // 设置等级数目到data
