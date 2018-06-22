@@ -1,4 +1,3 @@
 
-<view>
-  <canvas class="canvas"  id="canvas"></canvas>
-</view>
+  <canvas class="canvas_1st"  id="canvas_1st" ></canvas>
+  <canvas class="canvas_2st"  id="canvas_2st" ></canvas>

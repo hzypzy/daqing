@@ -69,7 +69,20 @@ Page({
     })
   },
   onLoad: function () {
-    if (app.globalData.userInfo) {
+
+    // 设置缓存
+    wx.setStorageSync('key', {
+      // 金币数
+      money_num: '10',
+      // 等级徽章图
+      lv_url: '',
+      // 等级数字
+      lv_num: '',
+      // 已经挑战的关卡数
+      number_gk: ''
+    })
+
+      if (app.globalData.userInfo) {
       // console.log(button.open - type.getUserInfo)
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -122,5 +135,8 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  onShareAppMessage: function () {
+
   }
 })

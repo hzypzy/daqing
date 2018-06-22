@@ -115,7 +115,8 @@ page{
   height: 316rpx;
   display: flex;
   justify-content: space-around;
-  align-items: center
+  align-items: center;
+  border-bottom: solid #93CDFF 20rpx
 }
 .z_1, .z_2{
   width: 180rpx;
