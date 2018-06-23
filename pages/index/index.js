@@ -4,6 +4,7 @@ const app = getApp()
 
 Page({
   data: {
+    g:false,
     // 金币数
     money_num:'0',
     // 等级徽章图
@@ -63,13 +64,18 @@ Page({
       showGift: false
     })
   },
-  // hover:function(){
-  //   this.setData({
-  //     ishover:true
-  //   })
-  // },
+  hover:function(){
+    this.setData({
+      ishover:true
+    })
+  },
   onLoad: function () {
-    console.log('触发了onload事件')
+    var that=this;
+    setTimeout(function(){
+      that.setData({
+        g:true
+      })
+    },3000)
     var key=wx.getStorageSync('key');
     if (!key) {
       // 设置缓存

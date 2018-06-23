@@ -34,11 +34,11 @@ Page({
     //获取来自首页缓存的玩家关卡数量
     var j = key.number_gk
     
+    // 将缓存数据绑定到data
     this.setData({ 
       property:p,
       ji:j,
       key:key
-    
     })
 
     // 选项_数组 不能超过三项
@@ -109,10 +109,18 @@ Page({
         st+=step;
 
         if (st >= 2 * Math.PI) {
+          // 时间到 金币-10
+          var pro = parseFloat(that.data.property);
+          pro -= 10;
           that.setData({
-            lock: true
+            lock: true,
+            property: pro
           })
-          clearInterval(time)
+          // 重新设置缓存
+          that.data.key.money_num = pro;
+          wx.setStorageSync('key', that.data.key)
+          // clearInterval(time)
+          st=0;
         }
 
       }, 30)
@@ -141,14 +149,18 @@ Page({
       pro+=10;
       guanqia++;
       this.setData({
+        // 答案正确
         judge: true,
         property: pro,
         ji: guanqia,
       })
 
     } else {
+      pro -= 10;
       this.setData({
-        judge: false
+        // 答案错误
+        judge: false,
+        property: pro,
       })
       // 重新设置缓存
       this.data.key.money_num = pro;

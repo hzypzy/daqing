@@ -86,6 +86,7 @@ text{
   text-align: center;
   color: #fff;
   font-size: 29rpx;
+  background:linear-gradient(to right,#FA5846, #FA1471);
 }
 .btn_1, .btn_2{
    margin-top: 30rpx; 

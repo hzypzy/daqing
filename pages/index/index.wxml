@@ -18,7 +18,7 @@
     <!-- 主要部分 -->
     <view class='content'>
       <view class='first'>
-        <view class="userinfo">
+        <view class="userinfo" wx:if='{{g}}'>
           <view class='user_'>
             <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
             <text class="userinfo-nickname">{{userInfo.nickName}}</text>
@@ -28,18 +28,18 @@
           <view class='jinbi'></view>
         </view>
         
-        <view class='g_k'>
+        <view class='g_k' wx:if='{{g}}'>
           <text class='number_gk'>{{number_gk}}</text>
           <text class='ytz'>已挑战(关)</text>
         </view>
 
-        <view class='lv'>
+        <view class='lv' wx:if='{{g}}'>
             <image class='lv_photo' src='{{lv_url}}'></image>
             <text class='lv_text'>等级{{lv_num}}</text>
         </view> 
       </view>
-          <!-- <view class='{{ishover?"seconds":"second"}}' catchtouchend='game_start' catchtouchstart='hover'></view>   -->
-          <view class="second" catchtap='game_start'></view>  
+           <!-- <view class='{{ishover?"seconds":"second"}}' catchtouchend='game_start' catchtouchstart='hover'></view>    -->
+       <view class="second" catchtap='game_start'></view>   
 
       <view class='thired'>
         <view class='rank' catchtap='new_rank'>
