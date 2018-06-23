@@ -4,10 +4,15 @@ const util = require('../../utils/util.js')
 
 Page({
   data: {
+    lock: false,
+    // 遮罩层唤醒
+    showGift: false,
     key:{},
     logs: [],
     // 倒计时 时间
-    interval:0,
+    interval:'10000',
+    // 进度条步长
+    
     // 玩家财产
     property:'',
     // 第几题 (三位数的时候结构会产生问题)
@@ -55,33 +60,72 @@ Page({
       hz_options:options_content
     })
 
-  //  倒计时canvas圆形进度条绘制
-    var interval = this.data.interval
-    setInterval(function () {
-      interval += 0.1;
-      // 页面渲染完成  
-      var cxt_arc = wx.createCanvasContext('canvasArc');//创建并返回绘图上下文context对象。  
-      cxt_arc.setLineWidth(6);
-      cxt_arc.setStrokeStyle('#228B22');
-      cxt_arc.setLineCap('round')
-      cxt_arc.beginPath();//开始一个新的路径  
-      // 圆心坐标 圆半径  圆周起始位置 Math.PI*2 为正圆弧长 false为顺时针
-      cxt_arc.arc(106, 106, 10, -10, 2 * Math.PI, false);//设置一个原点(106,106)，半径为100的圆的路径到当前路径  
-      cxt_arc.stroke();//对当前路径进行描边  
+      //  倒计时canvas圆形进度条绘制
+      // var step = parseFloat(this.data.step);
+      var inte = parseFloat(this.data.interval);
+      var step = Math.PI * 60 / inte;
+      var st=0;
+      var that=this;
 
-      cxt_arc.setLineWidth(6);
-      cxt_arc.setStrokeStyle('#FF4500');
-      cxt_arc.setLineCap('round')
-      cxt_arc.beginPath();//开始一个新的路径  
-      cxt_arc.arc(106, 106, 10, -10, Math.PI * interval, false);
-      cxt_arc.stroke();//对当前路径进行描边  
+      var time = setInterval(function () {
 
-      cxt_arc.draw();
+        // 外圈
+        var cxt_arc = wx.createCanvasContext('canvasArc');//创建并返回绘图上下文context对象。  
+        cxt_arc.setLineWidth(8);
+        cxt_arc.setStrokeStyle('white');
+        cxt_arc.setLineCap('round')
+        cxt_arc.beginPath();//开始一个新的路径  
+        // 圆心坐标 圆半径  圆周起始位置 Math.PI*2 为正圆弧长 false为顺时针
+        cxt_arc.arc(38, 38, 31, 0, 2 * Math.PI, false);//设置一个原点(106,106)，半径为100的圆的路径到当前路径  
+        cxt_arc.stroke();//对当前路径进行描边  
+        // 内圈
+        cxt_arc.setLineWidth(4);
+        cxt_arc.setStrokeStyle('white');
+        cxt_arc.setLineCap('round')
+        cxt_arc.beginPath();//开始一个新的路径  
+        cxt_arc.arc(38, 38, 27, 0, Math.PI * 2, false);
+        cxt_arc.stroke();//对当前路径进行描边  
 
-    }, 300)
+        // 内圈
+        cxt_arc.setLineWidth(5);
+        cxt_arc.setStrokeStyle('#F5AA4C');
+        cxt_arc.setLineCap('round')
+        cxt_arc.beginPath();//开始一个新的路径  
+        cxt_arc.arc(38, 38, 30, 0,  Math.PI * 2, false);
+        cxt_arc.stroke();//对当前路径进行描边  
+
+
+
+
+        cxt_arc.setLineWidth(6);
+        cxt_arc.setStrokeStyle('white');
+        cxt_arc.setLineCap('round')
+        cxt_arc.beginPath();//开始一个新的路径
+
+        cxt_arc.arc(38, 38, 30, 0, st, false);
+        cxt_arc.stroke();//对当前路径进行描边 
+        cxt_arc.draw();
+
+        st+=step;
+
+        if (st >= 2 * Math.PI) {
+          that.setData({
+            lock: true
+          })
+          clearInterval(time)
+        }
+
+      }, 30)
 
   },
+  // 事件处理函数
+
+  // 玩家答题业务
   choose: function (event) {
+    if(this.data.lock){
+      return
+    }else{
+
     // 获取玩家财产 property
     var pro = parseFloat(this.data.property);
     // 获取玩家闯关关卡数 ji
@@ -111,14 +155,39 @@ Page({
       this.data.key.number_gk = guanqia;
       wx.setStorageSync('key', this.data.key)
       // 触发定时器 延时
-      setTimeout(function(){
+      var that=this;
+      setTimeout(function () {
+
+        that.setData({
+        showGift: true
+        })
+        // 回到首页
+        // wx.navigateBack({
+
+        // })
+      },1000)
+    };
+    }
+  },
+
+  // 游戏失败
+  // 关注有好礼遮罩层 唤醒
+  // gift_show: function () {
+  //   this.setData({
+  //     showGift: true
+  //   })
+  // },
+  // 关注有好礼遮罩层 隐藏
+  gift_hide: function () {
+    this.setData({
+      showGift: false
+    })
         // 回到首页
         wx.navigateBack({
 
         })
-      },1000)
-    };
   },
+
   onShareAppMessage: function () {
 
   }

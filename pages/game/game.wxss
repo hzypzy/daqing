@@ -77,11 +77,16 @@ page{
 }  
   
 .circle{  
-  text-align: center  
+  text-align: center  ;
+  position: relative
 }  
   
 .cc{  
-  margin-top: -120px;  
+  position: absolute;
+  left: 28rpx;
+  top:54rpx;
+  font-size: 30rpx;
+  color: #fff;
 }  
 
 .music{

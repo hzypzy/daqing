@@ -112,6 +112,10 @@ page{
 .lv{
   margin-left: 30rpx;
   margin-right: 0;
+  margin-top: 10rpx;
+}
+.lv_photo{
+  margin-bottom: 17rpx
 }
 .jinbi{
   width: 30rpx;
@@ -128,7 +132,8 @@ page{
 .g_k{
   display: flex;
   flex-direction: column;
-  color: white
+  color: white;
+  margin-top: 7rpx;
 }
 .number_gk{
   font-size: 90rpx;
@@ -140,11 +145,11 @@ page{
 .lv{
   width: 160rpx;
   height: 170rpx;
-  margin-top: 10rpx;
+  /* margin-top: 10rpx; */
 }
 .lv_photo{
-   width: 130rpx;
-   height: 130rpx 
+   width: 96rpx;
+   height: 96rpx 
 }
 .lv_text{
   font-size: 30rpx;
