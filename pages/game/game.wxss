@@ -47,7 +47,9 @@ page{
   align-items: center;
   border-bottom: 20rpx solid rgba(149, 175, 223, 1)
 }
-.circle{
+
+
+/* .circle{
   width: 135rpx;
   height: 135rpx;
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH8AAAB/CAMAAADxY+0hAAAAhFBMVEUAAAD/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj3/oj23z7xiAAAALHRSTlMA5uIE2cYNy2PWFlo7CZ1PIrJuLyi1lxhC3nirikdyzrikhlUTvWBAax45RZKNoJ0AAAQLSURBVGjexNjNcuIwEATgHgkJy7/YGBswkBAgQPb9329rDzkwksHYUu13hypGPS0VGCNbFtXuWCpjBAljVHncVcUyA8KTy6hRglyEaqKlREBtks/ouVmetAgijkpBQ4gyiuGZXOeChhP5WsKfLFL0LhVl8EMfDI1hDhrTZTdDY5lbhomKOU0xLzDFoqOpugXGktWGpttUEqMsSvKjHDWC04x8mZ3wLvlFPn1JvCUuya8yxhvqV1un8m1yrVstIXVbX5Ntrl5tYo3Bfp4dvVht1xo2vd6uxLMQ/GCga//aiS45o9856UT/Iq4xyF70zvDQ4pX20Ht2Yo8BroLcPguJIWTxSW7iD15Ke4Z/2WO4/YWcNileqN3RM4nEO2Ty4Q5hjafO7o/tNN6ld+TyccYTsnTGLsUYqTOIpUQ/Z+k2GuPoxjlL9DqRTUQYLxJkO6HHYuYITIopUtdXLuAkV4641LBNvUlWEi4VWdQdU90VWSrn9DfEqRbTtYq4zQK2zh7+HT7c7U7pYCmGdxU3olMLMJmVE5HCl1QQM8/w6EZcBH8i4m6sqgwxOXxqiDGPpXqwBqThk54Tc3g4fUNMCr9SYkz27Hwa+NY8yZdUfPVi+BbzJVQSv9bEfMO/b2LW+JXzt56Ef/LSt2Exr4c9Qtjzgot70veJMD57Elha5RwGv2JK9/jnEmFIVkKixT+J1UyhVPQocaVftAilFY4NkKwYOoTTsZqTAJbWUMLhR720t0+cEU7s2MCGL39IF/uaY3fPFiF9sTsIyAS/FQLiHSwyK34aIWnBA1jwiYSleNVXvBKC4mVXYcfjF9aW/xlwDNg+rxvoiFXAd+/rd/CKB6JGWDWPu6EHMYLiDWww4+sflmY3IFghSIQlWQGCHiE0evTff//f6s1wR0EYCMLbxMDZ85IeTRWRxIAGEn3/99M/alIbV2vpLPMIFMruzDfg84e//+DvH37/ge9/+P8P/P+Hzz/WuxAyz3+Z59/an38zz/+Nd9q59x/n7T+Z97+jd9g/AvZf6P4vwP+gXzYdmsz/wfpfaiPC/4P7nzD/V4j/DfL/z1nzj+Nz/iEm/0HkX4s/QflfIP9cT/v0FwU2/62E5d+h/N9SGtlg/s/zD0tDKWSWytdOIP8B4F94/qechv8RyT/B+S+iFsG/8fzfiWJ0+pz/Ix3mH/sI/rEP8486iv/cJ+M/s/Cv52j+laiekP+tv+SfG0OcTMPwz7zq7QuOfnjJfw//iuW/ea0Y/n0M8u8jw7+vEvL/ZdcPozW6oEIbOw59Vybk/4m0U2nl9Kz6H/D+y1Um1Rk4M8v+E7z/he+/4ft/8P4jvv+J77/e+r/qPYX7v3PvPwvofz/674eq7dy9/+66tjrE9d8v9kRFLU1ZpE0AAAAASUVORK5CYII=)no-repeat;
@@ -69,7 +71,19 @@ page{
 }
 .circle_lit text{
   font-size: 30rpx;
-}
+} */
+.cir{  
+  display: inline-block;  
+}  
+  
+.circle{  
+  text-align: center  
+}  
+  
+.cc{  
+  margin-top: -120px;  
+}  
+
 .music{
   width: 45rpx;
   height: 45rpx;

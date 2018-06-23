@@ -11,7 +11,6 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         var code = res.code;
-        // console.log(code)
         wx.request({
           url: 'https://chz.dundashi.com.cn/index.php/api/v1/token/user', //仅为示例，并非真实的接口地址
           method: "POST",

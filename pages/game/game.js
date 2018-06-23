@@ -6,6 +6,8 @@ Page({
   data: {
     key:{},
     logs: [],
+    // 倒计时 时间
+    interval:0,
     // 玩家财产
     property:'',
     // 第几题 (三位数的时候结构会产生问题)
@@ -52,6 +54,32 @@ Page({
     this.setData({
       hz_options:options_content
     })
+
+  //  倒计时canvas圆形进度条绘制
+    var interval = this.data.interval
+    setInterval(function () {
+      interval += 0.1;
+      // 页面渲染完成  
+      var cxt_arc = wx.createCanvasContext('canvasArc');//创建并返回绘图上下文context对象。  
+      cxt_arc.setLineWidth(6);
+      cxt_arc.setStrokeStyle('#228B22');
+      cxt_arc.setLineCap('round')
+      cxt_arc.beginPath();//开始一个新的路径  
+      // 圆心坐标 圆半径  圆周起始位置 Math.PI*2 为正圆弧长 false为顺时针
+      cxt_arc.arc(106, 106, 10, -10, 2 * Math.PI, false);//设置一个原点(106,106)，半径为100的圆的路径到当前路径  
+      cxt_arc.stroke();//对当前路径进行描边  
+
+      cxt_arc.setLineWidth(6);
+      cxt_arc.setStrokeStyle('#FF4500');
+      cxt_arc.setLineCap('round')
+      cxt_arc.beginPath();//开始一个新的路径  
+      cxt_arc.arc(106, 106, 10, -10, Math.PI * interval, false);
+      cxt_arc.stroke();//对当前路径进行描边  
+
+      cxt_arc.draw();
+
+    }, 300)
+
   },
   choose: function (event) {
     // 获取玩家财产 property
@@ -82,9 +110,13 @@ Page({
       this.data.key.money_num = pro;
       this.data.key.number_gk = guanqia;
       wx.setStorageSync('key', this.data.key)
-      wx.navigateBack({
+      // 触发定时器 延时
+      setTimeout(function(){
+        // 回到首页
+        wx.navigateBack({
 
-      })
+        })
+      },1000)
     };
   },
   onShareAppMessage: function () {
