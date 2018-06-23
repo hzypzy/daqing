@@ -10,8 +10,8 @@ Page({
   data: {
     // 我的排名
     my_ran_num: 'undefined',
-    // 我的金币
-    my_money: 'undefined',
+    // 玩家财产
+    property: '',
     userInfo: {},
     hasUserInfo: false
   },
@@ -94,8 +94,18 @@ Page({
 
       }
     ];
-    this.setData({ posts_key: posts_content });
 
+
+    // 获取缓存
+    var key = wx.getStorageSync('key')
+    //获取来自首页缓存的玩家金币数量
+    var p = key.money_num
+
+    this.setData({ 
+      posts_key: posts_content ,
+      property: p
+    });
+    
   },
 
   /**

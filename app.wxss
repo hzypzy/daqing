@@ -42,11 +42,12 @@ text{
   margin:30rpx auto 0;
 }
 .get-gift-btn{
+  margin-top: 50rpx;
   width: 480rpx;
   height: 90rpx;
   line-height: 90rpx;
   border-radius: 45rpx;
   text-align: center;
   color: #fff;
-  background:linear-gradient(to right,red, blue);
+  background:linear-gradient(to right,#FB5847, #7802F3);
 }

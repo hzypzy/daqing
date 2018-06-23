@@ -8,7 +8,7 @@ Page({
     logs: [],
     // 玩家财产
     property:'',
-    // 第几题
+    // 第几题 (三位数的时候结构会产生问题)
     ji:'1',
     // 判断对错信号量
     judge:'',
@@ -20,14 +20,16 @@ Page({
     selected:''
   },
   onLoad: function () {
-    
     // 获取缓存
     var key=wx.getStorageSync('key')
     //获取来自首页缓存的玩家金币数量
     var p = key.money_num
-    console.log(p)
+    //获取来自首页缓存的玩家关卡数量
+    var j = key.number_gk
+    
     this.setData({ 
       property:p,
+      ji:j,
       key:key
     
     })
@@ -52,11 +54,12 @@ Page({
     })
   },
   choose: function (event) {
-    console.log(this.data.property)
+    // 获取玩家财产 property
     var pro = parseFloat(this.data.property);
+    // 获取玩家闯关关卡数 ji
+    var guanqia = parseFloat(this.data.ji);
     // 获取用户选择下标ID
     var id= event.currentTarget.dataset.option_id;
-    console.log(id);
     this.setData({
       selected: id,
       hide:false
@@ -64,9 +67,11 @@ Page({
     //假设后台传来的id为0;
     if (id === 0) {
       pro+=10;
+      guanqia++;
       this.setData({
         judge: true,
-        property:pro
+        property: pro,
+        ji: guanqia,
       })
 
     } else {
@@ -74,9 +79,12 @@ Page({
         judge: false
       })
       // 重新设置缓存
-      this.data.key.money_num=pro;
-      console.log(pro)
+      this.data.key.money_num = pro;
+      this.data.key.number_gk = guanqia;
       wx.setStorageSync('key', this.data.key)
+      wx.navigateBack({
+
+      })
     };
   },
   onShareAppMessage: function () {
