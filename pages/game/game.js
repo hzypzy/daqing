@@ -1,11 +1,11 @@
 //logs.js
 const util = require('../../utils/util.js')
 
+const globalData = getApp().globalData
 
 Page({
   data: {
     lock: false,
-    k:0,
     // 游戏结束 遮罩层唤醒
     showGift: false,
     
@@ -13,8 +13,7 @@ Page({
     st:0,
 
     key:{},
-    logs: [],
-    // 倒计时 时间
+    // 倒计时 时间十秒
     interval:'10000',
     // 进度条步长
     
@@ -31,7 +30,8 @@ Page({
     // 用于储存当前用户点击的event.currentTarget.dataset.option_id值
     selected: '',
     //这个是绘制canvas的定时器
-    time: ''
+    time: '',
+    k: 0,
   },
   onLoad: function () {
     // wx.clearStorageSync('key')
@@ -41,7 +41,12 @@ Page({
     //获取来自首页缓存的玩家金币数量
     var p = key.money_num
     //获取来自首页缓存的玩家关卡数量
-    var j = key.number_gk
+    var j = key.number_gk;
+    // if(j<10){
+    //   this.setData({
+    //     j:'0'+j
+    //   })
+    // }
 
     // 将缓存数据绑定到data
     this.setData({ 
@@ -77,7 +82,7 @@ Page({
       //  倒计时canvas圆形进度条绘制
       var step = parseFloat(this.data.step);
       var inte = parseFloat(this.data.interval);
-      var step = Math.PI * 20 / inte;
+      var step = Math.PI * 120 / inte;
       var st=this.data.st;
       var that=this;
 
@@ -87,7 +92,7 @@ Page({
         var cxt_arc = wx.createCanvasContext('canvasArc');//创建并返回绘图上下文context对象。  
         cxt_arc.setLineWidth(8);
         cxt_arc.setStrokeStyle('white');
-        cxt_arc.setLineCap('round')
+        cxt_arc.setLineCap('butt')
         cxt_arc.beginPath();//开始一个新的路径  
         // 圆心坐标 圆半径  圆周起始位置 Math.PI*2 为正圆弧长 false为顺时针
         cxt_arc.arc(38, 38, 31, 0, 2 * Math.PI, false);//设置一个原点(106,106)，半径为100的圆的路径到当前路径  
@@ -95,7 +100,7 @@ Page({
         // 内圈
         cxt_arc.setLineWidth(4);
         cxt_arc.setStrokeStyle('white');
-        cxt_arc.setLineCap('round')
+        cxt_arc.setLineCap('butt')
         cxt_arc.beginPath();//开始一个新的路径  
         cxt_arc.arc(38, 38, 27, 0, Math.PI * 2, false);
         cxt_arc.stroke();//对当前路径进行描边  
@@ -103,7 +108,7 @@ Page({
         // 内圈
         cxt_arc.setLineWidth(5);
         cxt_arc.setStrokeStyle('#F5AA4C');
-        cxt_arc.setLineCap('round')
+        cxt_arc.setLineCap('butt')
         cxt_arc.beginPath();//开始一个新的路径  
         cxt_arc.arc(38, 38, 30, 0,  Math.PI * 2, false);
         cxt_arc.stroke();//对当前路径进行描边  
@@ -111,7 +116,7 @@ Page({
 
         cxt_arc.setLineWidth(6);
         cxt_arc.setStrokeStyle('white');
-        cxt_arc.setLineCap('round')
+        cxt_arc.setLineCap('butt')
         cxt_arc.beginPath();//开始一个新的路径
 
         cxt_arc.arc(38, 38, 30, 0, st, false);
@@ -137,7 +142,7 @@ Page({
           st=0;
         }
 
-      }, 10)
+      }, 60)
       
 
 
@@ -266,11 +271,11 @@ Page({
     })
   },
   onHide:function(){
-    console.log('触发了onHide')
-    clearInterval(this.data.time)
-    this.setData({
-      time:''
-    })
+    // console.log('触发了onHide')
+    // clearInterval(this.data.time)
+    // this.setData({
+    //   time:''
+    // })
   },
   onShareAppMessage: function () {
 
@@ -279,6 +284,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
+    console.log('触发了onUnload')
     clearInterval(this.data.time)
     this.setData({
       time:''

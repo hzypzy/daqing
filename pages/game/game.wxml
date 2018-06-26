@@ -22,7 +22,7 @@
   <view class="circle">  
     <canvas class="cir" style="width:150rpx; height:150rpx;" canvas-id="canvasArc">  
     </canvas>  
-       <view class="cc">第{{ji}}题</view> 
+    <view class="cc">第{{ji}}题</view> 
   
         
   </view>  
@@ -37,12 +37,14 @@
 </view>
 
 <view class='share'>
+<button class='share' open-type='share'>
   <view class='share_frd' catchtap='shareToFriend'>
     
   </view>
   <view class='share_tem' catchtap='shareToTeam'>
   
   </view>
+</button>
 </view>
 
 <view class='z'>
@@ -54,7 +56,7 @@
      <!-- <image class='xv_1' hidden='{{hide && index != selected[index]}}' src="/img/{{judge[index]?'v':'x'}}.png"></image>  -->
 
                         <!-- 当前循环元素下标index 用户当前点击选项selected -->
-     <image class='xv_1' hidden='{{hide||index != selected}}' src="/img/{{judge?'v':'x'}}.png"></image> 
+      <image class='xv_1' hidden='{{hide||index != selected}}' src="/img/{{judge?'v':'x'}}.png"></image>  
   </view>
 </block>
 </view>

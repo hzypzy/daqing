@@ -4,6 +4,8 @@ const app = getApp()
 
 Page({
   data: {
+    // 防止二次点击节流
+    lock:false,
     g:false,
     // 金币数
     money_num:'0',
@@ -29,21 +31,42 @@ Page({
   },
   // 最新排行榜top100 跳转
   new_rank: function () {
-    wx.navigateTo({
-      url: '../rank/rank'
-    })
+    if (this.data.lock) {
+      return
+    } else {
+      this.setData({
+        lock:true
+      })
+      wx.navigateTo({
+        url: '../rank/rank'
+      })
+    }
   },
   // 好友PK榜 跳转
-  friend_pk_rank:function(){
-    wx.navigateTo({
-      url: '../friend_pk/frd_pk'
-    })
+  friend_pk_rank: function () {
+    if (this.data.lock) {
+      return
+    } else {
+      this.setData({
+        lock: true
+      })
+      wx.navigateTo({
+        url: '../friend_pk/frd_pk'
+      })
+    }
   },
   // 开始游戏 跳转
   game_start:function(){
-    wx.navigateTo({
-      url: '../game/game'
-    })
+    if(this.data.lock){
+      return
+    } else {
+      this.setData({
+        lock: true
+      })
+      wx.navigateTo({
+        url: '../game/game'
+      })
+    }
     // this.setData({
     //   ishover: false
     // })
@@ -156,5 +179,10 @@ Page({
   },
   onShareAppMessage: function () {
 
+  },
+  onHide:function(){
+    this.setData({
+      lock:false
+    })
   }
 })
