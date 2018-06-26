@@ -14,10 +14,71 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // function sortNumber(a, b) {
+    //   return a - b
+    // }
+
+    // sort()排序函数
+    var arr = new Array(6)
+    arr[0] = "10"
+    arr[1] = "5"
+    arr[2] = "40"
+    arr[3] = "25"
+    arr[4] = "1000"
+    arr[5] = "1"
+    function sort_number(a,b){
+      if(a-b>0){
+        return 1;
+      }else{
+        return -1
+      }
+    }
+    console.log(arr.sort());
+    console.log(arr.sort(sort_number))
+
+    // ES6箭头函数 无形参
+    var myfuc=()=>{
+      console.log('1')
+    }
+    myfuc()
+
+    // ES6箭头函数 有形参 返回对象的时候用小括号包裹起来 因为大括号被占用了
+    var myfuc = (a,b) => {
+      return ({
+        sum:a+b,
+        sub:a-b
+      })
+    }
+
+    console.log(myfuc(1,1))
+
+    // ES6箭头函数 sort排序
+    var arr_2 =[1, 9, 2, 4, 3, 8]
+    // var sort_num=(a,b)=>{
+    //   if(a-b>0){
+    //     return 1
+    //   }else{
+    //     return -1
+    //   }
+    // }
+    // console.log(arr_2.sort(sort_num))
+    var arr_3 = [15, 9, 2, 4, 3, 8].sort((a, b) => {
+      if (a - b > 0) {
+        return 1
+      } else {
+        return -1
+      }
+    })
+    console.log(arr_3)
+    
+
+
+
+
     var qwe=this.data.qwe
     setInterval(function(){
       qwe+=0.1;
-      console.log(qwe)
+      // console.log(qwe)
     // 页面渲染完成  
     var cxt_arc = wx.createCanvasContext('canvasArc');//创建并返回绘图上下文context对象。  
     cxt_arc.setLineWidth(6);

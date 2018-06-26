@@ -42,7 +42,7 @@ Page({
     var p = key.money_num
     //获取来自首页缓存的玩家关卡数量
     var j = key.number_gk
-    
+
     // 将缓存数据绑定到data
     this.setData({ 
       // 财产 关数 缓存'key'对象体 勾叉图png隐藏
@@ -50,7 +50,8 @@ Page({
       ji:j,
       key:key,
       hide: true,
-      lock:false
+      lock:false,
+      time:''
     })
 
     // 选项_数组 不能超过三项
@@ -264,7 +265,13 @@ Page({
       filePath: 'http://sc1.111ttt.com/2016/1/09/28/202280605509.mp3',
     })
   },
-
+  onHide:function(){
+    console.log('触发了onHide')
+    clearInterval(this.data.time)
+    this.setData({
+      time:''
+    })
+  },
   onShareAppMessage: function () {
 
   }

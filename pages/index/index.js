@@ -71,6 +71,9 @@ Page({
     })
   },
   onLoad: function () {
+    var single = a => console.log(a)
+    single('hello, world') // 'hello, world'
+
     var that=this;
     setTimeout(function(){
       that.setData({
@@ -124,7 +127,7 @@ Page({
   },
 
   onShow: function () {
-    console.log('触发了onshow事件')
+    
     var key=wx.getStorageSync('key')
     if(key){
       this.setData({

@@ -1,5 +1,9 @@
 //app.js
 App({
+
+  data:{
+    flag:false
+  },
   onLaunch: function () {
     
     // 登录
