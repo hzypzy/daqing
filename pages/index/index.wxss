@@ -137,6 +137,7 @@ page{
 }
 .money{
   font-size: 30rpx;
+  color: #fff;
 }
 .g_k{
   display: flex;
