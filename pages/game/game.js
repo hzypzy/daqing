@@ -1,5 +1,7 @@
 //logs.js
-const util = require('../../utils/util.js')
+// const util = require('../../utils/util.js')
+
+const app=getApp()
 
 const globalData = getApp().globalData
 
@@ -34,8 +36,12 @@ Page({
     k: 0,
   },
   onLoad: function () {
-    // wx.clearStorageSync('key')
-    // console.log('onload加载完毕' + this.data.k++)
+    // 获取全局数据
+    // var that=this
+    // app._request('接口', 'data', 'requestType',function(){
+
+    // })
+
     // 获取缓存
     var key=wx.getStorageSync('key')
     //获取来自首页缓存的玩家金币数量

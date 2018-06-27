@@ -25,77 +25,12 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  //事件处理函数
-  aa:function(e){
-    console.log(e)
-  },
-  // 最新排行榜top100 跳转
-  new_rank: function () {
-    if (this.data.lock) {
-      return
-    } else {
-      this.setData({
-        lock:true
-      })
-      wx.navigateTo({
-        url: '../rank/rank'
-      })
-    }
-  },
-  // 好友PK榜 跳转
-  friend_pk_rank: function () {
-    if (this.data.lock) {
-      return
-    } else {
-      this.setData({
-        lock: true
-      })
-      wx.navigateTo({
-        url: '../friend_pk/frd_pk'
-      })
-    }
-  },
-  // 开始游戏 跳转
-  game_start:function(){
-    if(this.data.lock){
-      return
-    } else {
-      this.setData({
-        lock: true
-      })
-      wx.navigateTo({
-        url: '../game/game'
-      })
-    }
-    // this.setData({
-    //   ishover: false
-    // })
-  },
-  bindViewTap: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
-  // 关注有好礼遮罩层 唤醒
-  gift_show:function(){
-    this.setData({
-      showGift: true
-    })
-  },
-  // 关注有好礼遮罩层 隐藏
-  gift_hide: function () {
-    this.setData({
-      showGift: false
-    })
-  },
-  hover:function(){
-    this.setData({
-      ishover:true
-    })
-  },
   onLoad: function () {
-    var single = a => console.log(a)
-    single('hello, world') // 'hello, world'
+    // 获取全局数据
+    // var that=this
+    // app._request('接口', 'data', 'requestType',function(){
+
+    // })
 
     var that=this;
     setTimeout(function(){
@@ -184,5 +119,74 @@ Page({
     this.setData({
       lock:false
     })
-  }
+  },
+
+  //事件处理函数
+  aa: function (e) {
+    console.log(e)
+  },
+  // 最新排行榜top100 跳转
+  new_rank: function () {
+    if (this.data.lock) {
+      return
+    } else {
+      this.setData({
+        lock: true
+      })
+      wx.navigateTo({
+        url: '../rank/rank'
+      })
+    }
+  },
+  // 好友PK榜 跳转
+  friend_pk_rank: function () {
+    if (this.data.lock) {
+      return
+    } else {
+      this.setData({
+        lock: true
+      })
+      wx.navigateTo({
+        url: '../friend_pk/frd_pk'
+      })
+    }
+  },
+  // 开始游戏 跳转
+  game_start: function () {
+    if (this.data.lock) {
+      return
+    } else {
+      this.setData({
+        lock: true
+      })
+      wx.navigateTo({
+        url: '../game/game'
+      })
+    }
+    // this.setData({
+    //   ishover: false
+    // })
+  },
+  bindViewTap: function () {
+    wx.navigateTo({
+      url: '../logs/logs'
+    })
+  },
+  // 关注有好礼遮罩层 唤醒
+  gift_show: function () {
+    this.setData({
+      showGift: true
+    })
+  },
+  // 关注有好礼遮罩层 隐藏
+  gift_hide: function () {
+    this.setData({
+      showGift: false
+    })
+  },
+  hover: function () {
+    this.setData({
+      ishover: true
+    })
+  },
 })

@@ -12,7 +12,7 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         var code = res.code;
 
-        this._request('token/user', code, "POST")
+        this._request('token/user', code, "POST",function(){})
 
       }
     })
@@ -22,7 +22,7 @@ App({
 
   },
 
-  _request: function (url,data,requestType){
+  _request: function (url,data,requestType,success){
     wx.request({
       url: 'https://chz.dundashi.com.cn/index.php/api/v1/' + url,
       data: {
@@ -36,7 +36,7 @@ App({
       dataType: 'json',
       responseType: 'text',
       success: function (res) {
-        console.log(res)
+        success(res)
       },
       fail: function (res) {
         console.log(res)
