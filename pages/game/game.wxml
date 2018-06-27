@@ -37,7 +37,7 @@
 </view>
 
 <view class='share'>
-<button class='share' open-type='share'>
+<button class='share' open-type='share' catchtap='shareButton_stopInterval'>
   <view class='share_frd' catchtap='shareToFriend'>
     
   </view>

@@ -42,11 +42,7 @@ Page({
     var p = key.money_num
     //获取来自首页缓存的玩家关卡数量
     var j = key.number_gk;
-    // if(j<10){
-    //   this.setData({
-    //     j:'0'+j
-    //   })
-    // }
+    
 
     // 将缓存数据绑定到data
     this.setData({ 
@@ -262,6 +258,15 @@ Page({
     this.data.key.money_num = this.data.property;
     // this.data.key.number_gk = guanqia;
     wx.setStorageSync('key', this.data.key)
+  }, 
+
+  //分享好友清楚定时器
+  shareButton_stopInterval: function (e) {
+    clearInterval(this.data.time)
+    this.setData({
+      time: ''
+    })
+    console.log(e)
   },
 
   //音乐播放  没得用??????????????????????????????????????????????????????????????????????????????
@@ -270,12 +275,8 @@ Page({
       filePath: 'http://sc1.111ttt.com/2016/1/09/28/202280605509.mp3',
     })
   },
-  onHide:function(){
-    // console.log('触发了onHide')
-    // clearInterval(this.data.time)
-    // this.setData({
-    //   time:''
-    // })
+  onHide: function () {
+    console.log('game hide')
   },
   onShareAppMessage: function () {
 
@@ -290,6 +291,10 @@ Page({
       time:''
     })
   },
+  onShow:function(){
+    // this.onLoad()
+    console.log('game show')
+  }
 })
 
 
